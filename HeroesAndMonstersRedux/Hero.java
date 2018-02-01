@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Hero{
     private int xPos, yPos;
     private int health;
@@ -7,7 +8,6 @@ public class Hero{
     private int numberHides = 0;
     private int speed;
     private int itemCapacity;
-    private ArrayList<Item> items;
     
     public Hero(){
         xPos = 0;
@@ -16,8 +16,6 @@ public class Hero{
         weap = new Weapon("dagger", 10, 30);
         hasArmor = false;
         speed = (int) (Math.random()*4);
-        itemCapacity = 2;
-        items = new ArrayList<Item>();
     }
     
     public int getX(){
