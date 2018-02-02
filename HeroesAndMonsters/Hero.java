@@ -1,4 +1,5 @@
 import java.util.*;
+//hello
 public class Hero{
     private int xPos, yPos;
     private int health;
@@ -11,11 +12,11 @@ public class Hero{
     
     public Hero(){
         xPos = 0;
-        yPos = 9;
+        yPos = 14;
         health = 100;
         weap = new Weapon("dagger", 10, 30);
         hasArmor = false;
-        speed = (int) (Math.random()*4);
+        speed = (int) (Math.random() * 4);
         itemCapacity = 2;
         items = new ArrayList<Item>();
     }
@@ -59,16 +60,17 @@ public class Hero{
         else if (choice.equals("a") && newX != 0){
             newX -= 1;
         }
-        else if (choice.equals("s") && newY != 9){
+        else if (choice.equals("s") && newY != 14){
             newY += 1;
         }
-        else if (choice.equals("d") && newX != 9){
+        else if (choice.equals("d") && newX != 14){
             newX += 1;
-        }        
+        }else{
+            return false;
+        }
         if (map[newX][newY] != null){
             return true;
         }
-        
         return false;
     }
     
@@ -246,7 +248,7 @@ public class Hero{
     
     public void move(String direction, Object map[][], Hero hero){
         if (direction.toLowerCase().equals("d")){
-            if (xPos == 9){
+            if (xPos == 14){
                 System.out.println("You cannot move right anymore.  You are at the edge of the map.  Try moving a different direction.");
             }
             else{
@@ -276,7 +278,7 @@ public class Hero{
             }
         }
         else if (direction.toLowerCase().equals("s")){
-            if (yPos == 9){
+            if (yPos == 14){
                 System.out.println("You cannot move down anymore.  You are at the edge of the map.  Try moving a different direction.");
             }
             else{
